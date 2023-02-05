@@ -1,0 +1,20 @@
+@media screen and (min-width: '600px') {
+    .show-reminder {
+      position: absolute;
+      border-radius: 5px;
+      background-color: #00bfa5;
+      width: 350px !important;
+      height: 15vh;
+      left: 50%;
+      right: 20%;
+      bottom: 30%;
+      top: 20%;
+      margin: 10px;
+      padding: 10px;
+      color: white;
+      font-size: large;
+      z-index: 1;
+    }
+  }
+  
+  

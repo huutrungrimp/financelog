@@ -1,0 +1,42 @@
+@import '../src/features/assets/styles/scss/homePage';
+@import '../src/features/assets/styles/scss/mainPage';
+@import '../src/features/assets/styles/scss/signout';
+@import '../src/features/assets/styles/scss/signin';
+@import '../src/features/assets/styles/scss/signup';
+@import '../src/features/assets/styles/scss/finance';
+@import '../src/features/assets/styles/scss/button';
+@import '../src/features/assets/styles/scss/task';
+@import '../src/features/assets/styles/scss/public';
+@import '../src/features/assets/styles/scss/covid19';
+@import '../src/features/assets/styles/scss/calendar';
+@import '../src/features/assets/styles/scss/income';
+@import '../src/features/assets/styles/scss/alert';
+@import '../src/features/assets/styles/scss/post';
+
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+}
+
+#root {
+  margin: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.App {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0px;
+
+}
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+@import "../node_modules/bootstrap/scss/bootstrap";

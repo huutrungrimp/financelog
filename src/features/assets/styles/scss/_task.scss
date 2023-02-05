@@ -1,0 +1,78 @@
+#searchTask {
+    background-color: tint-color(green, 85%);
+    border-radius: 6px;
+    padding: 10px 10px 10px 10px;
+}
+
+.createTask {
+    padding: 10px 10px 10px 10px;
+}
+
+
+.customerInfo {
+    display: flex;
+    gap: 10px;
+
+    .existingCustomer {
+        width: 60%;
+    }
+
+    .addCustomer {
+        width: 40%;
+        display: flex;
+    }
+}
+
+
+.searchCustomer {
+    display: flex;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+
+.taskStatus {
+    margin-bottom: 10px;
+}
+
+#taskList {
+    background-color: rgb(147, 165, 159);
+    border-radius: 4px;
+}
+
+
+
+.MuiDataGrid-row:hover {
+    background-color: rgb(157, 157, 207)!important;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+
+    .taskTiming,
+    .customerAddress {
+        display: flex;
+        gap: 10px;
+    }
+
+    .taskStatus {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .customerInfo {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-start;
+
+        .existingCustomer {
+            width: 30%;
+        }
+
+        .addCustomer {
+            width: 30%;
+            display: flex;
+        }
+    }
+
+}

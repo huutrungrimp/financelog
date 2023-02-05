@@ -1,0 +1,24 @@
+@import './variables';
+
+.signin {
+    margin: auto;
+    padding: 80px 10px 10px 10px;
+}
+.signin h3 {
+    text-align: center;
+}
+.signin div {
+    background-color: tint-color($green, 60%);
+    border-radius: 10px;
+}
+.forgetPassword {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (min-width: 600px) {
+    .signin {
+        width: 500px;
+        margin: auto;
+    }
+}

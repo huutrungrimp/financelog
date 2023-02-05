@@ -1,0 +1,52 @@
+@import './mixin';
+@import './variables';
+
+
+.home {
+    justify-content: center;
+    min-height: 100vh;
+    width: 90%;
+    margin: auto;
+}
+
+.image4about {
+    // background-image: url('https://d1pra95f92lrn3.cloudfront.net/media/thumb/9192_fit512.jpg');
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.image4resume {
+    // background-image: url('https://lighthealing.ca/wp-content/uploads/2012/10/sunny-cloudless-sky-377x270.jpg');
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.image4portfolio {
+    // background-image: url('https://pics.freeartbackgrounds.com/midle/Country_Fields_and_Blue_Sky_Background-196.jpg');
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.about,
+.resume,
+.portfolio {
+    min-height: 100vh;
+    padding-top: 70px;
+
+}
+
+.about p {
+    text-align: justify;
+    padding-right: 0px;
+    // color: #ebe41c;
+}
+
+.resume {
+    p {
+        text-align: justify;
+        padding-right: 0px;
+    }
+    .table {
+        width: 100%
+    }
+}

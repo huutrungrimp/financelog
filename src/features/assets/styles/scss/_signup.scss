@@ -1,0 +1,20 @@
+@import './variables';
+
+.signup {
+    margin: auto;
+    padding: 80px 10px 10px 10px;
+}
+.signup h3 {
+    text-align: center;
+}
+.signup div {
+    background-color: tint-color($green, 60%);
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 600px) {
+    .signup {
+        width: 500px;
+        margin: auto;
+    }
+}

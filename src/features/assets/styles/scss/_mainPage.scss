@@ -1,0 +1,80 @@
+@import './variables';
+
+.mainPage {
+  margin-top: 57px;
+  min-height: 90vh;
+  background-color: aqua;
+}
+
+.menuMain {
+  margin-left: 0px;
+  margin-right: 0px;
+  display: none;
+}
+
+.contentMain {
+  min-height: 100vh;
+  background-color: rgb(217, 235, 232);
+}
+
+.menu4Desktop {
+  display: none;
+}
+
+.menu4Mobile {
+  margin-left: 0px;
+  display: none;
+}
+.footer {
+  display: flex;
+  height: 6vh;
+  padding: 0px 10px 0px 10px;
+  justify-content: space-between;
+  background-color: tint-color($blue, 60%);
+}
+
+
+@media screen and (min-width: 1000px) {
+
+  .home {
+    width: 75%;
+  }
+
+  .mainPage {
+    margin-top: 68px;
+    display: flex;
+    justify-content: space-between;
+    // min-height: auto;
+    background-color: tint-color($green, 70%);
+  }
+
+  .menuMain {
+    display: block;
+    padding-top: 10px;
+    width: 15%;
+    float: left;
+    // min-height: 100vh;
+    background-color: rgb(57, 63, 68);
+    min-width: 200px;
+  }
+
+  .contentMain {
+    padding-top: 0px;
+    width: 85%;
+    float: right;
+    // min-height: 100vh;
+    background-color: tint-color(green, 95%);
+  }
+
+  .menu4Desktop {
+    margin-top: 50px;
+    margin-left: 20px;    
+    width: 180px;
+    display: block;
+  }
+
+  .content4Mobile {
+    display: none;
+  }
+
+}
