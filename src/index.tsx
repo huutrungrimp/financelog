@@ -5,6 +5,8 @@ import { App } from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { store } from '../src/app/store';
 import { Provider } from 'react-redux';
+import './prism.js';
+import './prism.css'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

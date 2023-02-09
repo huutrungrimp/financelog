@@ -44,7 +44,7 @@ export default function CustomerList() {
                 <h4>Existing customers</h4>
                 <Box>
                     {customers.map(customer => (
-                        <Box display="flex" justifyContent='space-between' key={customer.id + customer.customerName.replace(/\s+/g, '-')}>
+                        <Box display="flex" justifyContent='space-between' key={customer.id + customer.customerName?.replace(/\s+/g, '-')}>
                             <Box sx={{ width: '60%'}}>
                                 <Link href={'/' + data?.username + '/finance/customers/' + customer.id}>{customer.customerName}</Link>
                             </Box>

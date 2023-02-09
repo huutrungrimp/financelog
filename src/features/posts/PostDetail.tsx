@@ -15,6 +15,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { ThemeProvider } from 'react-bootstrap';
 import { topPanelTheme } from '../assets/styles/mui/styles';
+import remarkGfm from "remark-gfm";
 
 
 export default function PostDetail() {
@@ -73,7 +74,7 @@ export default function PostDetail() {
             <div>
               <ReactMarkdown
                 children={post.content}
-                remarkPlugins={[gfm]}
+                remarkPlugins={[remarkGfm]}
                 components={{
                   code({ node, inline, className, children, ...props }) {
                     const match = /language-(\w+)/.exec(className || "");
@@ -94,6 +95,9 @@ export default function PostDetail() {
                   },
                 }}
               />
+            </div>
+            <div>
+              {parse(post.content)}
             </div>
           </div>
         </ThemeProvider>

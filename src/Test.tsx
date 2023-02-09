@@ -1,70 +1,51 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
+import React, { useEffect } from 'react'
+import Prism from 'prismjs'
+import 'prismjs/components/prism-javascript' // Language
+import 'prismjs/themes/prism-okaidia.css' // Theme
 
-export default function Test() {
-    const [value, setValue] = React.useState('1');
+function Test() {
 
-    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-        setValue(newValue);
-    };
+    // Init
+    useEffect(() => {
+        Prism.highlightAll()
+    }, [])
+
+    const codes = `
+  <div className="App">
+			<h1>Welcome to React Router!</h1>
+			<CKEditor
+				editor={Editor}
+				config={editorConfiguration}
+				data="<p>Hello from CKEditor 5!</p>"
+				onReady={(editor) => {
+					// You can store the "editor" and use when it is needed.
+					console.log("Editor is ready to use!", editor);
+				}}
+				onChange={(event, editor) => {
+					const data = editor.getData();
+					console.log({ event, editor, data });
+				}}
+				onBlur={(event, editor) => {
+					console.log("Blur.", editor);
+				}}
+				onFocus={(event, editor) => {
+					console.log("Focus.", editor);
+				}}
+				f
+			/>
+		</div>
+  `
     return (
-        <div className='test-parent'>
-            <div className='test-child-menu'>
-                <ul>
-                    <li>Test 1</li>
-                    <li>Test 1</li>
-                    <li>Test 1</li>
-                </ul>
-            </div>
-            <div className='test-child-content'>
-                <Box sx={{ width: '100%', typography: 'body1' }}>
-                    <TabContext value={value}>
-                        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                            <TabList onChange={handleChange} aria-label="lab API tabs example">
-                                <Tab label="Item One" value="1" />
-                                <Tab label="Item Two" value="2" />
-                                <Tab label="Item Three" value="3" />
-                            </TabList>
-                        </Box>
-                        <TabPanel value="1">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit fugiat dolores sequi, iusto architecto aspernatur soluta maxime ab, cumque culpa accusamus harum aut dignissimos, quibusdam odio animi itaque omnis similique!
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit fugiat dolores sequi, iusto architecto aspernatur soluta maxime ab, cumque culpa accusamus harum aut dignissimos, quibusdam odio animi itaque omnis similique!
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit fugiat dolores sequi, iusto architecto aspernatur soluta maxime ab, cumque culpa accusamus harum aut dignissimos, quibusdam odio animi itaque omnis similique!
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit fugiat dolores sequi, iusto architecto aspernatur soluta maxime ab, cumque culpa accusamus harum aut dignissimos, quibusdam odio animi itaque omnis similique!
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit fugiat dolores sequi, iusto architecto aspernatur soluta maxime ab, cumque culpa accusamus harum aut dignissimos, quibusdam odio animi itaque omnis similique!
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit fugiat dolores sequi, iusto architecto aspernatur soluta maxime ab, cumque culpa accusamus harum aut dignissimos, quibusdam odio animi itaque omnis similique!
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit fugiat dolores sequi, iusto architecto aspernatur soluta maxime ab, cumque culpa accusamus harum aut dignissimos, quibusdam odio animi itaque omnis similique!
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit fugiat dolores sequi, iusto architecto aspernatur soluta maxime ab, cumque culpa accusamus harum aut dignissimos, quibusdam odio animi itaque omnis similique!
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit fugiat dolores sequi, iusto architecto aspernatur soluta maxime ab, cumque culpa accusamus harum aut dignissimos, quibusdam odio animi itaque omnis similique!
-                            </p>
-                        </TabPanel>
-                        <TabPanel value="2">Item Two</TabPanel>
-                        <TabPanel value="3">Item Three</TabPanel>
-                    </TabContext>
-                </Box>
+        <div className="App">
+            <pre>
+                <code className="language-javascript">
 
-            </div>
+                    {codes}
+
+                </code>
+            </pre>
         </div>
     )
 }
+
+export default Test

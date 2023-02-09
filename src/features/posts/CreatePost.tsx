@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, TextField, Button, ThemeProvider, TextareaAutosize } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../app/hooks';
@@ -17,6 +17,10 @@ import gfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
+import Prism from 'prismjs'
+import 'prismjs/components/prism-javascript' // Language
+import 'prismjs/themes/prism-okaidia.css' // Theme
+
 
 export default function CreatePost() {
     const [title, setTitle] = useState('')
@@ -30,12 +34,16 @@ export default function CreatePost() {
             title: title,
             content: content
         }
-        console.log(post)
         dispatch(createPost(post))
         navigate(-1)
     }
 
     console.log(content)
+
+    useEffect(() => {
+        Prism.highlightAll()
+    }, [])
+
 
     return (
         <ThemeProvider theme={componentTheme}>
@@ -59,7 +67,6 @@ export default function CreatePost() {
                     }}
                 />
                 <TextareaAutosize defaultValue={content} style={{ width: '100%' }} />
-
                 <div>
                     <ReactMarkdown
                         children={content}
@@ -67,7 +74,6 @@ export default function CreatePost() {
                         components={{
                             code({ node, inline, className, children, ...props }) {
                                 const match = /language-(\w+)/.exec(className || "");
-                                console.log(props);
                                 return !inline && match ? (
                                     <SyntaxHighlighter
                                         children={String(children).replace(/\n$/, "")}
@@ -84,6 +90,9 @@ export default function CreatePost() {
                             },
                         }}
                     />
+                </div>
+                <div>
+                    {parse(content)}
                 </div>
 
                 <Button className='btnSubmit' onClick={onSubmit}>
