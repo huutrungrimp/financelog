@@ -5,48 +5,231 @@
 .home {
     justify-content: center;
     min-height: 100vh;
-    width: 90%;
+    padding: 40px;
     margin: auto;
 }
 
-.image4about {
-    // background-image: url('https://d1pra95f92lrn3.cloudfront.net/media/thumb/9192_fit512.jpg');
-    background-repeat: no-repeat;
-    background-size: cover
-}
-
-.image4resume {
-    // background-image: url('https://lighthealing.ca/wp-content/uploads/2012/10/sunny-cloudless-sky-377x270.jpg');
-    background-repeat: no-repeat;
-    background-size: cover
-}
-
-.image4portfolio {
-    // background-image: url('https://pics.freeartbackgrounds.com/midle/Country_Fields_and_Blue_Sky_Background-196.jpg');
-    background-repeat: no-repeat;
-    background-size: cover
-}
-
-.about,
-.resume,
-.portfolio {
-    min-height: 100vh;
+.about {
     padding-top: 70px;
+    min-height: 100vh;
 
-}
+    h2 {
+        text-align: center !important;
+        margin-bottom: 20px;
+    }
 
-.about p {
-    text-align: justify;
-    padding-right: 0px;
-    // color: #ebe41c;
+    p {
+        text-align: justify;
+    }
 }
 
 .resume {
+    padding-top: 70px;
+    min-height: 100vh;
+
+    .resume-header {
+        h2 {
+            text-align: center !important;
+            margin-top: 20px;
+        }
+
+        p {
+            text-align: center;
+            padding: 0px;
+            margin-top: 0px;
+            margin-bottom: 0;
+            font-style: italic;
+
+            a {
+                color: blue !important;
+            }
+        }
+
+        div {
+            display: block;
+        }
+    }
+
+    .resume-devider {
+        width: 90%;
+        margin: auto;
+        border-bottom: 1px solid blue;
+    }
+
+    .resume-content {
+        padding-top: 30px;
+
+        th {
+            display: none;
+        }
+
+        td {
+            font-size: 14px !important;
+        }
+
+        h2 {
+            text-align: left !important;
+            margin-top: 20px;
+            // border-bottom: 1px solid green;
+            width: 80%;
+        }
+
+        p,
+        li {
+            font-size: 14px;
+        }
+
+        a {
+            color: blue !important;
+        }
+    }
+}
+
+#portfolio {
+    padding-top: 70px;
+    min-height: 100vh;
+
+    .portfolio-financelog,
+    .portfolio-covid19 {
+        h3 {
+            text-align: left;
+        }
+
+    }
+}
+
+.portfolio-financelog-content-text,
+.portfolio-covid19-content-text {
     p {
         text-align: justify;
-        padding-right: 0px;
+        font-size: 14px;
     }
-    .table {
-        width: 100%
+}
+
+@media screen and (min-width:600px) {
+    .about {
+        padding-top: 100px;
+
+        h2 {
+            text-align: center !important;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        .about-content {
+            display: flex;
+
+            .about-content-text {
+                width: 50%;
+                padding-top: 10px;
+
+            }
+
+            .about-content-image {
+                margin-left: 30px;
+                width: 50%;
+                padding-top: 20px
+            }
+        }
+
     }
+
+    .resume {
+        padding-top: 100px;
+        min-height: 100vh;
+
+        h2 {
+            text-align: center !important;
+            margin-top: 20px;
+        }
+
+        p {
+            text-align: center;
+            margin-right: 20px;
+        }
+
+        .resume-header div {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .resume-devider {
+            width: 60% !important;
+            margin: auto;
+            border-bottom: 1px solid blue !important;
+            // border-style: double;
+        }
+
+        .resume-content {
+            padding-top: 30px;
+
+            th {
+                display: none;
+            }
+
+            td {
+                font-size: 15px !important;
+                min-width: 250px;
+            }
+
+            h2 {
+                text-align: left !important;
+                margin-top: 20px;
+            }
+
+            p,
+            li {
+                font-size: 16px !important;
+                text-align: left;
+            }
+
+            p {
+                margin-left: 0px;
+
+            }
+        }
+    }
+
+    #portfolio {
+        padding-top: 100px;
+        min-height: 100vh;
+
+        h2 {
+            text-align: center !important;
+            margin-bottom: 20px;
+        }
+
+        .portfolio {
+            display: flex;
+
+            .portfolio-financelog {
+                width: 40%;
+                margin-right: 20px;
+
+                .portfolio-financelog-content-text {
+                    p {
+                        text-align: justify;
+                        font-size: 16px!important;
+                    }
+                }
+
+            }
+
+            .portfolio-covid19 {
+                width: 40%;
+                margin-left: 20px;
+                .portfolio-covid19-content-text {
+                    p {
+                        text-align: justify;
+                        font-size: 16px!important;
+                    }
+                }
+            }
+        }
+    }
+
 }

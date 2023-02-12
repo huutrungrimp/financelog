@@ -4,23 +4,15 @@ import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../app/hooks';
 import { createPost } from './postSlice';
 import { componentTheme } from '../assets/styles/mui/styles';
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
-import ReactHtmlParser, { Element } from 'html-react-parser';
-import parse from 'html-react-parser';
-
 import { CKEditor } from '@ckeditor/ckeditor5-react'
 import Editor from "ckeditor5-custom-build/build/ckeditor";
 import { editorConfiguration } from '../assets/ckeditor';
-
+import parse from 'html-react-parser';
+import ReactMarkdown from 'react-markdown'
 import gfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-
-import Prism from 'prismjs'
-import 'prismjs/components/prism-javascript' // Language
-import 'prismjs/themes/prism-okaidia.css' // Theme
-
+import remarkGfm from 'remark-gfm';
 
 export default function CreatePost() {
     const [title, setTitle] = useState('')
@@ -38,17 +30,13 @@ export default function CreatePost() {
         navigate(-1)
     }
 
-    console.log(content)
 
-    useEffect(() => {
-        Prism.highlightAll()
-    }, [])
+    console.log(content)
 
 
     return (
         <ThemeProvider theme={componentTheme}>
             <Box className='componentClass posts'>
-                <h4>Create Post</h4>
                 <Box>
                     <TextField
                         label='Name'
@@ -58,6 +46,7 @@ export default function CreatePost() {
                         onChange={e => setTitle(e.target.value)}
                     />
                 </Box>
+
                 <CKEditor
                     editor={Editor}
                     config={editorConfiguration}
@@ -66,7 +55,6 @@ export default function CreatePost() {
                         setContent(data)
                     }}
                 />
-                <TextareaAutosize defaultValue={content} style={{ width: '100%' }} />
                 <div>
                     <ReactMarkdown
                         children={content}
@@ -91,9 +79,7 @@ export default function CreatePost() {
                         }}
                     />
                 </div>
-                <div>
-                    {parse(content)}
-                </div>
+
 
                 <Button className='btnSubmit' onClick={onSubmit}>
                     Submit

@@ -10,7 +10,6 @@ import IconButton from '@mui/material/IconButton'
 import Button from '@mui/material/Button'
 
 import ReactMarkdown from 'react-markdown'
-import gfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { ThemeProvider } from 'react-bootstrap';
@@ -96,9 +95,7 @@ export default function PostDetail() {
                 }}
               />
             </div>
-            <div>
-              {parse(post.content)}
-            </div>
+
           </div>
         </ThemeProvider>
       )}

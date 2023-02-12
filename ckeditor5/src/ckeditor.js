@@ -17,7 +17,6 @@ import FontBackgroundColor from '@ckeditor/ckeditor5-font/src/fontbackgroundcolo
 import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor.js';
 import FontFamily from '@ckeditor/ckeditor5-font/src/fontfamily.js';
 import FontSize from '@ckeditor/ckeditor5-font/src/fontsize.js';
-import GeneralHtmlSupport from '@ckeditor/ckeditor5-html-support/src/generalhtmlsupport.js';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading.js';
 import Image from '@ckeditor/ckeditor5-image/src/image.js';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption.js';
@@ -29,15 +28,13 @@ import IndentBlock from '@ckeditor/ckeditor5-indent/src/indentblock.js';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic.js';
 import Link from '@ckeditor/ckeditor5-link/src/link.js';
 import List from '@ckeditor/ckeditor5-list/src/list.js';
-import ListProperties from '@ckeditor/ckeditor5-list/src/listproperties.js';
+import Markdown from '@ckeditor/ckeditor5-markdown-gfm/src/markdown.js';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed.js';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph.js';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice.js';
 import PictureEditing from '@ckeditor/ckeditor5-image/src/pictureediting.js';
 import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat.js';
-import Style from '@ckeditor/ckeditor5-style/src/style.js';
 import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript.js';
-import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript.js';
 import Table from '@ckeditor/ckeditor5-table/src/table.js';
 import TableColumnResize from '@ckeditor/ckeditor5-table/src/tablecolumnresize.js';
 import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
@@ -45,7 +42,6 @@ import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar.js';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation.js';
 import Title from '@ckeditor/ckeditor5-heading/src/title.js';
 import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
-import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline.js';
 
 class Editor extends ClassicEditor {}
 
@@ -65,7 +61,6 @@ Editor.builtinPlugins = [
 	FontColor,
 	FontFamily,
 	FontSize,
-	GeneralHtmlSupport,
 	Heading,
 	Image,
 	ImageCaption,
@@ -77,23 +72,20 @@ Editor.builtinPlugins = [
 	Italic,
 	Link,
 	List,
-	ListProperties,
+	Markdown,
 	MediaEmbed,
 	Paragraph,
 	PasteFromOffice,
 	PictureEditing,
 	RemoveFormat,
-	Style,
 	Subscript,
-	Superscript,
 	Table,
 	TableColumnResize,
 	TableProperties,
 	TableToolbar,
 	TextTransformation,
 	Title,
-	TodoList,
-	Underline
+	TodoList
 ];
 
 // Editor configuration.
@@ -102,7 +94,6 @@ Editor.defaultConfig = {
 		items: [
 			'heading',
 			'|',
-			'ckbox',
 			'bold',
 			'italic',
 			'link',
@@ -117,20 +108,18 @@ Editor.defaultConfig = {
 			'insertTable',
 			'mediaEmbed',
 			'undo',
-			'code',
 			'redo',
+			'ckbox',
 			'alignment',
 			'codeBlock',
+			'code',
 			'fontBackgroundColor',
 			'fontColor',
-			'fontFamily',
 			'fontSize',
+			'fontFamily',
 			'removeFormat',
-			'style',
 			'subscript',
-			'superscript',
-			'todoList',
-			'underline'
+			'todoList'
 		]
 	},
 	language: 'en',
